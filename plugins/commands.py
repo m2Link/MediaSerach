@@ -93,7 +93,7 @@ async def start(bot, cmd):
             )
         )
     else:
-        await cmd.send_message(
+        await bot.send_message(
             text=Script.START_TEXT,
             parse_mode="Markdown",
             disable_web_page_preview=True,

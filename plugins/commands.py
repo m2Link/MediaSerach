@@ -94,6 +94,7 @@ async def start(bot, cmd):
         )
     else:
         await bot.send_message(
+            chat_id=cmd.from_user.id
             text=Script.START_TEXT,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(

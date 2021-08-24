@@ -5,6 +5,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION
 from utils import Media, get_file_details
 from pyrogram.errors import UserNotParticipant
+from script import Script
 logger = logging.getLogger(__name__)
 
 @Client.on_message(filters.command("start"))
@@ -109,6 +110,29 @@ async def start(bot, cmd):
             )
         )
 
+@Client.on_message(filters.command('help') & filters.private)
+async def help(client, message):
+    await message.reply_text(
+        text=Script.HELP_MSG,
+        disable_web_page_preview=True,
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("Filters", callback_data="filters"),
+                    InlineKeyboardButton("Connections", callback_data="connections")
+                ],
+                [
+                    InlineKeyboardButton("Import and Export", callback_data="imports"),
+                    InlineKeyboardButton("Others", callback_data="others")
+                ],
+                [
+                    InlineKeyboardButton("Support", url="https://t.me/albin_binu"),
+                    InlineKeyboardButton("Updates", url="https://t.me/albin_binu")
+                ]
+            ]
+        ),
+        reply_to_message_id=message.message_id
+    )
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):

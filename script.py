@@ -11,7 +11,7 @@ Usual commands:
 """
 
     START_TEXT = """
-**Hi, I'm Media Search bot**
+**Hello 👋, I'm Arina I'm a inline search Bot designed buy @tg_kid 🙄**
 
 Here you can search files in inline mode. Just press follwing buttons and start searching.
 """

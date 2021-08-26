@@ -109,11 +109,11 @@ async def start(bot, cmd):
                         InlineKeyboardButton("💁Help", callback_data="about")
                     ],
                     [
-                        InlineKeyboardButton("👻My dev", url="https://t.me/albin_binu),
+                        InlineKeyboardButton("👻My dev", url="https://t.me/albin_binu"),
                         InlineKeyboardButton("🎯About", callback_data="about")
                     ],
                     [
-                        InlineKeyboardButton("♻️Add me in your Chat", url="https://t.me/albin_binu)
+                        InlineKeyboardButton("♻️Add me in your Chat", url="https://t.me/albin_binu")
                 ]
             )
         )

@@ -106,11 +106,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('Source Code', url='https://github.com/subinps/Media-Search-bot')
                 ]
                 ]
-            await query.message.edit(
-            Script.HELP_MSG,
-            reply_markup=InlineKeyboardMarkup(buttons)
-            disable_web_page_preview=True
-            )
+            await query.message.edit(Script.HELP_MSG, reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            
         
         elif query.data.startswith("subinps"):
             ident, file_id = query.data.split("#")

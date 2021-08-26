@@ -109,9 +109,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit(
             Script.HELP_MSG,
             reply_markup=InlineKeyboardMarkup(buttons)
-            disable_web_page_preview=True)
+            disable_web_page_preview=True
+            )
         
-
         elif query.data.startswith("subinps"):
             ident, file_id = query.data.split("#")
             filedetails = await get_file_details(file_id)

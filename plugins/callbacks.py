@@ -108,7 +108,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('go inline', switch_inline_query_current_chat='')
                 ],
                 ]
-            await query.message.edit(Script.HELPZ_TEXT, reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.text.edit(Script.HELPZ_TEXT, reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
      
         elif query.data == "howto":

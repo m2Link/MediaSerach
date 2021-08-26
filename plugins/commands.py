@@ -99,7 +99,6 @@ async def start(bot, cmd):
             photo="https://telegra.ph/file/f8ec23f51459806ff12ba.jpg",
             caption=Script.START_TEXT,
             parse_mode="Markdown",
-            disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [

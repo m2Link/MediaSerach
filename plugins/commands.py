@@ -114,6 +114,7 @@ async def start(bot, cmd):
                     ],
                     [
                         InlineKeyboardButton("♻️Add me in your Chat", url="https://t.me/albin_binu")
+                    ]
                 ]
             )
         )

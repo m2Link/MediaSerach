@@ -22,3 +22,19 @@ This method is wrok in Chats and pm, Just type @username then leave a space the 
 
 Here you can search files in inline mode. Just press follwing buttons and start searching.
 """
+
+    ABOUT_TEXT = """
+🙋🏻‍♂️ Hello {}
+    
+○ My Name : Movie Searching Bot
+○ Creator : Lucifer 👻
+○ Credits : Everyone in this journey
+○ Language : Python3
+○ Library : Pyrogram asyncio 0.17.1
+○ Supported Site : Only Telegram
+○ Source Code : 👉 Click Here
+○ Server : Heroku
+○ Database : MongoDB
+○ Build Status : V2.1 [BETA]
+📜 Quote : ആരും പേടിക്കണ്ട എല്ലാവർക്കും കിട്ടും™️
+"""

@@ -3,6 +3,7 @@ from info import AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, API_KEY, AUTH_GR
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
 import re
+from script import Script
 from pyrogram.errors import UserNotParticipant
 from utils import get_filter_results, get_file_details, is_subscribed, get_poster
 BUTTONS = {}
@@ -269,6 +270,23 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     reply_markup=InlineKeyboardMarkup(buttons)
                 )
                 return
+        elif query.data == "howto":
+             await query.answer()
+             keyboard = InlineKeyboardMarkup(
+                   [
+                [
+                    InlineKeyboardButton("Back", callback_data="help"),
+                    InlineKeyboardButton("Buttons", callback_data="buttons")
+                ]
+            ]
+        )
+
+        await query.message.edit_text(
+            Script.HELP_MSG,
+            reply_markup=keyboard,
+            disable_web_page_preview=True
+        )
+        return
         elif query.data == "about":
             buttons = [
                 [
@@ -280,7 +298,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
 
 
-        elif query.data.startswith("subinps"):
+        elif query.data.startswith("albin_binu"):
             ident, file_id = query.data.split("#")
             filedetails = await get_file_details(file_id)
             for files in filedetails:

@@ -106,7 +106,7 @@ async def start(bot, cmd):
                     ],
                     [
                         InlineKeyboardButton("🔍Serach here🔎", switch_inline_query_current_chat=''),
-                        InlineKeyboardButton("💁Help", callback_data="about")
+                        InlineKeyboardButton("💁Help", callback_data="helpz")
                     ],
                     [
                         InlineKeyboardButton("👻My dev", url="https://t.me/albin_binu"),

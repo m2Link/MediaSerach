@@ -287,8 +287,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             disable_web_page_preview=True
         )
         return
-
-            elif query.data == "about":
+ 
+        elif query.data == "about":
             await query.answer()
             keyboard = InlineKeyboardMarkup(
                    [
@@ -303,7 +303,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
              reply_markup=keyboard,
              disable_web_page_preview=True
        )
- 
 
         elif query.data.startswith("albin_binu"):
             ident, file_id = query.data.split("#")

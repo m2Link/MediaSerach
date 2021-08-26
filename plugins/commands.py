@@ -84,7 +84,7 @@ async def start(bot, cmd):
         invite_link = await bot.create_chat_invite_link(int(AUTH_CHANNEL))
         await bot.send_photo(
             chat_id=cmd.from_user.id,
-            photo="https://telegra.ph/file/f8ec23f51459806ff12ba.jpg",
+            photo="https://telegra.ph/file/d433fcff094ed716d0c7b.jpg",
             caption="**Please Join My Updates Channel to use this Bot!**",
             reply_markup=InlineKeyboardMarkup(
                 [

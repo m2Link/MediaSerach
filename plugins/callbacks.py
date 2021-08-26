@@ -1,7 +1,7 @@
 import os
 import ast
 
-from pyrogram import Client as albin
+from pyrogram import Client
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from script import Script
 

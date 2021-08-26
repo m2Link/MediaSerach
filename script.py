@@ -2,19 +2,19 @@ class Script(object):
 
 
     HELP_MSG = """
-👻   Hellooo
+👻   Hello
 
-=> It's a simple proccess.. 
+<b>=> It's a simple proccess.. 
 
 => Serach using inline mode. 
 This method is wrok in Chats and pm, Just type @username then leave a space the type the film that you need.
+</b>
 
-
-->:NB📗
+<b>->:NB📗
 
 => This is a pre progamed bot, this is not a humanbeing. Serach movie's using correct spelling or use @imdbot.
-
-©️Mainted buy @albin_binu 🙄
+</b>
+<i>©️Mainted by @albin_binu 🙄</i>
 """
 
     START_TEXT = """

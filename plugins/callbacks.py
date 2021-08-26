@@ -2,7 +2,7 @@ import os
 import ast
 
 from pyrogram import Client
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from script import Script
 
 @Client.on_callback_query()

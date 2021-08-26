@@ -38,3 +38,9 @@ Here you can search files in inline mode. Just press follwing buttons and start 
 ○ Build Status : V2.1 [BETA]
 📜 Quote : ആരും പേടിക്കണ്ട എല്ലാവർക്കും കിട്ടും™️
 """
+
+    HELPZ_TEXT = """
+Hello {},You need my help 😆.
+Glad to hear that 😉.how can I help you? 🙄
+"""
+

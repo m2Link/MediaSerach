@@ -355,3 +355,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.answer()
     else:
         await query.answer("കൌതുകും ലേശം കൂടുതൽ ആണല്ലേ👀",show_alert=True)
+
+        elif query.data == "about":
+            await query.answer()
+            keyboard = InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("Back", callback_data="help"),
+                    InlineKeyboardButton("Buttons", callback_data="buttons")
+                ]
+            ]
+        )
+
+        await query.message.edit_text(
+            Script.HELP_MSG,
+            reply_markup=keyboard,
+            disable_web_page_preview=True
+        )

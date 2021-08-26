@@ -2,12 +2,19 @@ class Script(object):
 
 
     HELP_MSG = """
-What is a filter bot?
-A bot were group admins can set replies for a particular keyword and the bot will automatically send preset replies whenever that keyword enountered in the chat.
+👻   Hellooo
 
-Usual commands:
-/start - check whether im online
-/help - get this help message
+=> It's a simple proccess.. 
+
+=> Serach using inline mode. 
+This method is wrok in Chats and pm, Just type @username then leave a space the type the film that you need.
+
+
+->:NB📗
+
+=> This is a pre progamed bot, this is not a humanbeing. Serach movie's using correct spelling or use @imdbot.
+
+©️Mainted buy @albin_binu 🙄
 """
 
     START_TEXT = """

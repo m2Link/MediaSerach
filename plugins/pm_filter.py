@@ -287,7 +287,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             disable_web_page_preview=True
         )
         return
- 
        elif query.data == "about":
             await query.answer()
             keyboard = InlineKeyboardMarkup(

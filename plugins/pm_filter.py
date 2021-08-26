@@ -270,7 +270,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     reply_markup=InlineKeyboardMarkup(buttons)
                 )
                 return
-        elif query.data == "howto":
+            elif query.data == "howto":
              await query.answer()
              keyboard = InlineKeyboardMarkup(
                    [
@@ -287,7 +287,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             disable_web_page_preview=True
         )
         return
-       elif query.data == "about":
+
+            elif query.data == "about":
             await query.answer()
             keyboard = InlineKeyboardMarkup(
                    [

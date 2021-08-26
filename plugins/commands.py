@@ -85,7 +85,7 @@ async def start(bot, cmd):
         await bot.send_photo(
             chat_id=cmd.from_user.id,
             photo="https://telegra.ph/file/f8ec23f51459806ff12ba.jpg",
-            text="**Please Join My Updates Channel to use this Bot!**",
+            caption="**Please Join My Updates Channel to use this Bot!**",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -97,7 +97,7 @@ async def start(bot, cmd):
     else:
         await cmd.reply_photo(
             photo="https://telegra.ph/file/f8ec23f51459806ff12ba.jpg",
-            text=Script.START_TEXT,
+            caption=Script.START_TEXT,
             parse_mode="Markdown",
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(

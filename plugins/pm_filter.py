@@ -288,7 +288,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
         return
  
-        elif query.data == "about":
+       elif query.data == "about":
             await query.answer()
             keyboard = InlineKeyboardMarkup(
                    [

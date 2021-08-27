@@ -2,7 +2,7 @@
 import os
 import logging
 from pyrogram import Client, filters
-
+from sticker import Sticker
 from script import Script
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from info import CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION
@@ -11,11 +11,7 @@ from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
 # -- constants ---
-STICKERS = (
-    "CAACAgUAAxkBAAFIRQphKQbckc1uXuohdouJ-Uvbwh4gPQAC8QEAAl3yWFfRiO9T02a9dCAE",
-    "CAACAgIAAxkBAAFIRRBhKQcXSGLozxhkvFVKswUj-LHl4QAC5QADVp29CggLFmSVBdGKIAQ"
-    
-)
+
 
 @Client.on_message(filters.command("start"))
 async def start(bot, cmd):
@@ -103,7 +99,8 @@ async def start(bot, cmd):
             )
         )
     else:
-        await cmd.send_sticker(STICKERS)
+        await cmd.send_sticker(
+        sticker=Stickers.STICKERS
             
 @Client.on_message(filters.command('help') & filters.private)
 async def help(bot, cmd):

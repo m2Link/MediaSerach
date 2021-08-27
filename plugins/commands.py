@@ -82,9 +82,9 @@ async def start(bot, cmd):
             await cmd.reply_text(f"Something went wrong!\n\n**Error:** `{err}`")
     elif len(cmd.command) > 1 and cmd.command[1] == 'subscribe':
         invite_link = await bot.create_chat_invite_link(int(AUTH_CHANNEL))
-        await bot.send_sticker(
+        await bot.send_photo(
             chat_id=cmd.from_user.id,
-            sticker="CAACAgIAAx0CSMbgUAABDlW1YSjtrvv3AbIfiwMboryAbsLFtf8AAnAAA6_GURr1rq3xgoZ54B4E",
+            photo="https://telegra.ph/file/b05760409061092dc139b.jpg",
             caption="**Please Join My Updates Channel to use this Bot!**",
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -117,7 +117,20 @@ async def start(bot, cmd):
             )
         )
 
-
+@Client.on_message(filters.command('help') & filters.private)
+async def help(client, message):
+    await message.send_photo(
+    chat_id=cmd.from_user.id,
+            photo="https://telegra.ph/file/b05760409061092dc139b.jpg",
+            caption="Script.HELP_MSG",
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "Close", callback_data="close_data")
+                ],            
+            ]
+        ),  
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
     """Send basic information of channel"""

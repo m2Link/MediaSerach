@@ -127,6 +127,31 @@ async def start(bot, cmd):
         )
     else:
         await cmd.reply_sticker(random.choice(STICKERS))
+
+@Client.on_message(filters.command('start') & filters.private)
+async def star(client, message):
+    await message.reply_photo(
+            photo="https://telegra.ph/file/56bbf8009201d727410e9.jpg",
+            caption=Script.START_TEXT,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton("❔How to use me❓", callback_data="howto")
+                    ],
+                    [
+                        InlineKeyboardButton("🔍Serach here🔎", switch_inline_query_current_chat=''),
+                        InlineKeyboardButton("💁Help", callback_data="helpz")
+                    ],
+                    [
+                        InlineKeyboardButton("👻My dev", url="https://t.me/albin_binu"),
+                        InlineKeyboardButton("🎯About", callback_data="about")
+                    ],
+                    [
+                        InlineKeyboardButton("♻️Add me in your Chat", url="https://t.me/albin_binu")
+                    ]
+                ]
+            )
+        )
             
 @Client.on_message(filters.command('help') & filters.private)
 async def help(bot, cmd):

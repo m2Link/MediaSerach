@@ -125,12 +125,15 @@ async def help(client, message):
             caption="Script.HELP_MSG",
             reply_markup=InlineKeyboardMarkup(
             [
-                [
-                    InlineKeyboardButton(
-                        "Close", callback_data="close_data")
-                ],            
-            ]
-        )  
+                  [
+                       InlineKeyboardButton("🤖 Join Updates Channel", url=invite_link.invite_link)
+                  ],
+                  [
+                       InlineKeyboardButton(" 🔄 Try Again", callback_data=f"checksub#{file_id}")
+                  ]
+             ]
+        ),
+        parse_mode="markdown"
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
     """Send basic information of channel"""

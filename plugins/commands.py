@@ -126,7 +126,7 @@ async def help(bot, cmd):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🤖 Join Updates Channel", url=invite_link.invite_link)
+                        InlineKeyboardButton("🤖 Join Updates Channel", url="t.me/albin_binu")
                     ]
                 ]
             )

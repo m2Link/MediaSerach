@@ -127,12 +127,6 @@ async def start(bot, cmd):
         )
     else:
         await cmd.reply_sticker(random.choice(STICKERS))
-
-@Client.on_message(filters.command('start') & filters.private)
-async def start(client, message):
-    await message.reply_photo(
-            photo="https://telegra.ph/file/56bbf8009201d727410e9.jpg",
-            caption=Script.START_TEXT,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [

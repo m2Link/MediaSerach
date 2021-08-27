@@ -1,3 +1,8 @@
-class Script(object)
+class Sticker(object)
 
-    STICKERS = """
+  
+STICKERS = (
+    "CAACAgUAAxkBAAFIRQphKQbckc1uXuohdouJ-Uvbwh4gPQAC8QEAAl3yWFfRiO9T02a9dCAE",
+    "CAACAgIAAxkBAAFIRRBhKQcXSGLozxhkvFVKswUj-LHl4QAC5QADVp29CggLFmSVBdGKIAQ"
+    
+)

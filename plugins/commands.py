@@ -111,26 +111,7 @@ async def start(bot, cmd):
         )
     else:
         await cmd.reply_sticker(STICKER)
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton("❔How to use me❓", callback_data="howto")
-                    ],
-                    [
-                        InlineKeyboardButton("🔍Serach here🔎", switch_inline_query_current_chat=''),
-                        InlineKeyboardButton("💁Help", callback_data="helpz")
-                    ],
-                    [
-                        InlineKeyboardButton("👻My dev", url="https://t.me/albin_binu"),
-                        InlineKeyboardButton("🎯About", callback_data="about")
-                    ],
-                    [
-                        InlineKeyboardButton("♻️Add me in your Chat", url="https://t.me/albin_binu")
-                    ]
-                ]
-            )
-        )
-
+            
 @Client.on_message(filters.command('help') & filters.private)
 async def help(bot, cmd):
     await cmd.reply_photo(

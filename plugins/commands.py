@@ -124,16 +124,14 @@ async def help(client, message):
             photo="https://telegra.ph/file/b05760409061092dc139b.jpg",
             caption="Script.HELP_MSG",
             reply_markup=InlineKeyboardMarkup(
-            [
-                  [
-                       InlineKeyboardButton("🤖 Join Updates Channel", url=invite_link.invite_link)
-                  ],
-                  [
-                       InlineKeyboardButton(" 🔄 Try Again", callback_data=f"checksub#{file_id}")
-                  ]
-             ]
-        ),
-        parse_mode="markdown"
+                [
+                    [
+                        InlineKeyboardButton("🤖 Join Updates Channel", url=invite_link.invite_link)
+                    ]
+                ]
+            )
+        )
+        
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
     """Send basic information of channel"""

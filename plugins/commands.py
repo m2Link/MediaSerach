@@ -126,7 +126,8 @@ async def start(bot, cmd):
             )
         )
     else:
-        await cmd.send_sticker(random.choice(STICKERS))
+        await bot.send_sticker(random.choice(STICKERS))
+            chat_id=cmd.from_user.id,
             reply_markup=InlineKeyboardMarkup(
                 [
                    [

@@ -127,7 +127,7 @@ async def start(bot, cmd):
         )
     else:
         await cmd.reply_sticker(random.choice(STICKERS))
-            reply_markup=InlineKeyboardMarkup(
+             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton("❔How to use me❓", callback_data="howto")

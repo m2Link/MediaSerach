@@ -118,7 +118,7 @@ async def start(bot, cmd):
         )
 
 @Client.on_message(filters.command('help') & filters.private)
-async def help(client, message):
+async def help(bot, cmd):
     await cmd.send_photo(
     chat_id=cmd.from_user.id,
             photo="https://telegra.ph/file/b05760409061092dc139b.jpg",

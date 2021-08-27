@@ -1,6 +1,7 @@
 # imports
 import os
 import logging
+import random
 from pyrogram import Client, filters
 from script import Script
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup

@@ -2,7 +2,6 @@
 import os
 import logging
 from pyrogram import Client, filters
-from sticker import Sticker
 from script import Script
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from info import CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION
@@ -11,7 +10,18 @@ from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
 # -- constants ---
-
+STICKERS = (
+    "CAACAgUAAxkBAAJOGmBeli95P073FKVkgc4esfKE4UlXAAIOAgACyavAVkbLMIidWYdyHgQ",
+    "CAACAgUAAxkBAAJOG2BeljABwlCfwzHT1gzyiciBri6_AAIsAgACXBPBVgpGQRz-1qmlHgQ",
+    "CAACAgUAAxkBAAJOHGBeljOJ35CQNnkpnVcgRoHuJX6DAAL3AQACN8TBVm1PIART01cWHgQ",
+    "CAACAgUAAxkBAAJOHWBeljXW9QzYQ51gpCjHZHCF5Ui6AAJ7AgAC3zDBVo2xenp7JYhAHgQ",
+    "CAACAgUAAxkBAAJOHmBeljjU0_FT_QpdUUJBqVUC0nfJAAKYAgACJ_jBVvntHY_8WF27HgQ",
+    "CAACAgUAAxkBAAJOH2BeljrV68mPLu8_6n4edT20Q3IQAAJ9AgACq3LBVmLuZuNPlvkfHgQ",
+    "CAACAgUAAxkBAAJOIGBeljttuniUPykRtzkSZj3SRwKJAAI7AgACNm_BVp8TCkE6ZqCoHgQ",
+    "CAACAgUAAxkBAAJOIWBelj-P_2vtVqtkF2OMlVN3M0N4AAK3AQACSm3BVkXF2voraS2tHgQ",
+    "CAACAgUAAxkBAAJOImBelkJxUBm2rL1iPfMZfk-_9DaOAALrAgAC4T3BVniopXQVsZ4KHgQ",
+    "CAACAgUAAxkBAAJOI2BelkMO0AX_wtAc7hUZz1NixuMlAAKEAwACY4TAViVuNLTBmmkgHgQ"
+)
 
 @Client.on_message(filters.command("start"))
 async def start(bot, cmd):
@@ -99,8 +109,7 @@ async def start(bot, cmd):
             )
         )
     else:
-        await cmd.send_sticker(
-        sticker=Stickers.STICKERS
+        await cmd.reply_sticker(random.choice(STICKERS))
             
 @Client.on_message(filters.command('help') & filters.private)
 async def help(bot, cmd):

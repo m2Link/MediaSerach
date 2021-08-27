@@ -126,7 +126,7 @@ async def start(bot, cmd):
             )
         )
     else:
-        await cmd.reply_sticker(random.choice(STICKERS))
+        await cmd.reply_sticker(STICKERS)
             reply_markup=InlineKeyboardMarkup(
                 [
                    [

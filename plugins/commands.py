@@ -121,7 +121,7 @@ async def start(bot, cmd):
 async def help(bot, cmd):
     await cmd.reply_photo(
             photo="https://telegra.ph/file/b05760409061092dc139b.jpg",
-            caption="Script.HELP_MSG",
+            caption=Script.HELP_MSG,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [

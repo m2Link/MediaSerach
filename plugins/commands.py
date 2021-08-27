@@ -130,7 +130,7 @@ async def help(client, message):
                         "Close", callback_data="close_data")
                 ],            
             ]
-        ),  
+        )  
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
     """Send basic information of channel"""

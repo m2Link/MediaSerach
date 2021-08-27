@@ -103,7 +103,7 @@ async def start(bot, cmd):
             )
         )
     else:
-        await cmd.reply_sticker(STICKERS)
+        await cmd.send_sticker(STICKERS)
             
 @Client.on_message(filters.command('help') & filters.private)
 async def help(bot, cmd):

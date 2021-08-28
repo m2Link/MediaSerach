@@ -130,8 +130,8 @@ async def start(bot, cmd):
             chat_id=cmd.from_user.id,
             sticker="CAACAgIAAxkBAAFIRpRhKSOavdKOIP3ZdKtEcEvKbbYX6QACbAADr8ZRGrWxwiCZlayYIAQ"
             
- buttons =  [
-                [
+            buttons =  [[
+                
                     InlineKeyboardButton("❔How to use me❓", callback_data="howto")
                 ],
                 [

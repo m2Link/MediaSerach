@@ -1,47 +1,19 @@
+
 import os
-import random
 import logging
 from pyrogram import Client, filters
+
+from script import Script
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION
+from info import CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION
 from utils import Media, get_file_details
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
-from script import Script
-
-STICKERS = (
-    "CAACAgIAAxkBAAFIRn5hKSOKb3njAAHvRKwD80OkF0tLkAwAAl4AA6_GURqPIlssOJ_8NyAE",
-    "CAACAgIAAxkBAAFIRn9hKSOKjcr8VLQefLOf_6LWBuoJJAACXQADr8ZRGjk1L1YLigsVIAQ",
-    "CAACAgIAAxkBAAFIRoBhKSOLC1KHf3oOEku7lsvC7CHmDgACYQADr8ZRGq70R9934jY7IAQ",
-    "CAACAgIAAxkBAAFIRoFhKSOMj1_kTx-dKVIbeIN9XnX2kwACXwADr8ZRGpFB8WXiSOloIAQ",
-    "CAACAgIAAxkBAAFIRoJhKSOM9N-nx8sj6RIPPfYPv39CiQACZQADr8ZRGn2-GO6trucHIAQ",
-    "CAACAgIAAxkBAAFIRoNhKSOOUmKqdcRpti9sQqsqZ_7e3gACVwADr8ZRGi4O74AW-2UxIAQ",
-    "CAACAgIAAxkBAAFIRoRhKSOOAvbAsgzONssG-uZUS0H7kgACZgADr8ZRGsQ2jQXZMcpzIAQ",
-    "CAACAgIAAxkBAAFIRoVhKSOPxxkK26MUfzJfNy0RxjkYWwACWAADr8ZRGs5s1MJUTM72IAQ",
-    "CAACAgIAAxkBAAFIRoZhKSOQUWvFdj2ie2hkxEcF-AhnIQACWQADr8ZRGozJIAQs0RWxIAQ",
-    "CAACAgIAAxkBAAFIRohhKSORLwOMcUbBLtyuTDdyfKmhawACYgADr8ZRGrF6sYqYtZ2WIAQ",
-    "CAACAgIAAxkBAAFIRolhKSOTDIDxelzoh5GLisXC0gGUNAACYAADr8ZRGjufkDKyxauoIAQ",
-    "CAACAgIAAxkBAAFIRolhKSOTDIDxelzoh5GLisXC0gGUNAACYAADr8ZRGjufkDKyxauoIAQ",
-    "CAACAgIAAxkBAAFIRophKSOTSxsTMeewMnpoRhekvZR7kQACWgADr8ZRGnfyVwkiVE6CIAQ",
-    "CAACAgIAAxkBAAFIRothKSOUfHH2pZvv_Zmd2Cx-J97WuAACWwADr8ZRGkv_pdGBt_pPIAQ",
-    "CAACAgIAAxkBAAFIRo1hKSOUHQqCLbRHlDCJKTcjM5QznwACXAADr8ZRGhmnzvSkaMQkIAQ",
-    "CAACAgIAAxkBAAFIRo5hKSOVoyBJod1cmVXLLz4pnPL1BwACZAADr8ZRGt1OQaIPwAkhIAQ",
-    "CAACAgIAAxkBAAFIRo9hKSOWwVjiVgk2746eGEH6q7NKnwACZwADr8ZRGsmQice9AYoCIAQ",
-    "CAACAgIAAxkBAAFIRpBhKSOXr7nCXRJxPeh7sQ0woV3hBwACaAADr8ZRGmKWjxfFaPfQIAQ",
-    "CAACAgIAAxkBAAFIRpFhKSOX1nStU7pmPuxJ0ByNIJqw7QACaQADr8ZRGrZyHv618OjQIAQ",
-    "CAACAgIAAxkBAAFIRpJhKSOYyrFNC4Lu_3ie6_3IJbabDwACagADr8ZRGuiCGKEfyBPBIAQ",
-    "CAACAgIAAxkBAAFIRpNhKSOZtkij_JQWcQfdDm0fTVugjQACawADr8ZRGhWONteHdHrbIAQ",
-    "CAACAgIAAxkBAAFIRpRhKSOavdKOIP3ZdKtEcEvKbbYX6QACbAADr8ZRGrWxwiCZlayYIAQ",
-    "CAACAgIAAxkBAAFIRpVhKSOazYfqMvpG0npDDgNDkVSm8QACbQADr8ZRGu2loo9F1U5qIAQ",
-    "CAACAgIAAxkBAAFIRpZhKSObHxK_ginJvhYLNhs9INuoNgACbgADr8ZRGjNF2IaG56c3IAQ",
-    "CAACAgIAAxkBAAFIRpdhKSObORUdt6e6dTCBXBDx-YpbEgACbwADr8ZRGjGYrB7l2M5CIAQ",
-    "CAACAgIAAxkBAAFIRphhKSOcd9uXrAiWjQABy1wp3gHWXZUAAnAAA6_GURr1rq3xgoZ54CAE"
-)
 
 @Client.on_message(filters.command("start"))
 async def start(bot, cmd):
     usr_cmdall1 = cmd.text
-    if usr_cmdall1.startswith("/start subinps"):
+    if usr_cmdall1.startswith("/start albin_binu"):
         if AUTH_CHANNEL:
             invite_link = await bot.create_chat_invite_link(int(AUTH_CHANNEL))
             try:
@@ -111,9 +83,10 @@ async def start(bot, cmd):
             await cmd.reply_text(f"Something went wrong!\n\n**Error:** `{err}`")
     elif len(cmd.command) > 1 and cmd.command[1] == 'subscribe':
         invite_link = await bot.create_chat_invite_link(int(AUTH_CHANNEL))
-        await bot.send_message(
+        await bot.send_sticker(
             chat_id=cmd.from_user.id,
-            text="**Please Join My Updates Channel to use this Bot!**",
+            sticker="CAACAgIAAx0CSMbgUAABDlW1YSjtrvv3AbIfiwMboryAbsLFtf8AAnAAA6_GURr1rq3xgoZ54B4E",
+            caption="**Please Join My Updates Channel to use this Bot!**",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -123,8 +96,28 @@ async def start(bot, cmd):
             )
         )
     else:
-        await cmd.reply_sticker(random.choice(STICKERS))
-            
+        await cmd.reply_sticker(
+            sticker="CAACAgIAAx0CSMbgUAABDlW1YSjtrvv3AbIfiwMboryAbsLFtf8AAnAAA6_GURr1rq3xgoZ54B4E",
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton("❔How to use me❓", callback_data="howto")
+                    ],
+                    [
+                        InlineKeyboardButton("🔍Serach here🔎", switch_inline_query_current_chat=''),
+                        InlineKeyboardButton("💁Help", callback_data="helpz")
+                    ],
+                    [
+                        InlineKeyboardButton("👻My dev", url="https://t.me/albin_binu"),
+                        InlineKeyboardButton("🎯About", callback_data="about")
+                    ],
+                    [
+                        InlineKeyboardButton("♻️Add me in your Chat", url="https://t.me/albin_binu")
+                    ]
+                ]
+            )
+        )
+
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
@@ -213,3 +206,4 @@ async def bot_info(bot, message):
         ]
         ]
     await message.reply(text="<b>Developer : <a href='https://t.me/subinps_bot'>SUBIN</a>\nLanguage : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nSource Code : <a href='https://github.com/subinps/Media-Search-bot'>Click here</a>\nUpdate Channel : <a href='https://t.me/subin_works'>XTZ Bots</a> </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+

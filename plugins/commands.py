@@ -1,4 +1,5 @@
 import os
+import random
 import logging
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
@@ -122,21 +123,8 @@ async def start(bot, cmd):
             )
         )
     else:
-        await cmd.reply_sticker(STICKERS),
-            chat_id=cmd.from_user.id,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton("Search Here", switch_inline_query_current_chat=''),
-                        InlineKeyboardButton("Other Bots", url="https://t.me/subin_works/122")
-                    ],
-                    [
-                        InlineKeyboardButton("About", callback_data="about")
-                    ]
-                ]
-            )
-        )
-
+        await cmd.reply_sticker(random.choice(STICKERS))
+            
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):

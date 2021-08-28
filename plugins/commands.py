@@ -99,7 +99,7 @@ async def start(bot, cmd):
     else:
         await cmd.send_photo(
             chat_id=cmd.from_user.id,
-            photo="photo.HARLEY",
+            photo="https://telegra.ph/file/e84096b77f2555b8f4ebf.jpg",
             caption=Script.START_MSG,
             reply_markup=InlineKeyboardMarkup(
                 [

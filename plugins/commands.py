@@ -126,7 +126,7 @@ async def start(bot, cmd):
             )
         )
     else:
-        await bot.reply_sticker(
+        await cmd.reply_sticker(
             chat_id=cmd.from_user.id,
             sticker="CAACAgIAAxkBAAFIRpRhKSOavdKOIP3ZdKtEcEvKbbYX6QACbAADr8ZRGrWxwiCZlayYIAQ"
             send_markup=InlineKeyboardMarkup(

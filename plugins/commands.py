@@ -122,8 +122,7 @@ async def start(bot, cmd):
             )
         )
     else:
-        await cmd.reply_sticker(STICKERS)
-            parse_mode="Markdown",
+        await cmd.reply_sticker(STICKERS),
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [

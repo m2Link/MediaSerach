@@ -122,7 +122,7 @@ async def start(bot, cmd):
             )
         )
     else:
-        await cmd.reply_sticker(STICKERS),
+        await cmd.reply_sticker(STICKERS)
             reply_markup=InlineKeyboardMarkup(
                 [
                     [

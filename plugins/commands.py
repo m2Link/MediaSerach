@@ -97,7 +97,9 @@ async def start(bot, cmd):
             )
         )
     else:
-        await cmd.send_photo((random.choice(STICKERS))
+        await cmd.send_photo(
+            chat_id=cmd.from_user.id,
+            photo="photo.HARLEY",
             caption=Script.START_MSG,
             reply_markup=InlineKeyboardMarkup(
                 [

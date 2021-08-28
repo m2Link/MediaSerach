@@ -129,6 +129,7 @@ async def start(bot, cmd):
         await bot.reply_sticker(
             chat_id=cmd.from_user.id,
             sticker="CAACAgIAAxkBAAFIRpRhKSOavdKOIP3ZdKtEcEvKbbYX6QACbAADr8ZRGrWxwiCZlayYIAQ"
+
             reply_markup=InlineKeyboardMarkup(
                 [
                    [
@@ -147,7 +148,7 @@ async def start(bot, cmd):
                    ]
                ]
            )
-       
+      )   
             
 @Client.on_message(filters.command('help') & filters.private)
 async def help(bot, cmd):

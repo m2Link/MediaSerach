@@ -97,7 +97,7 @@ async def start(bot, cmd):
         )
     else:
         await cmd.reply_sticker(
-            sticker="CAACAgIAAx0CSMbgUAABDlW1YSjtrvv3AbIfiwMboryAbsLFtf8AAnAAA6_GURr1rq3xgoZ54B4E",
+            sticker="CAACAgIAAxkBAAFIRoJhKemWpuaeU15hQMixZVk5LHfhNQACZQADr8ZRGn2-GO6trucHIAQ",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [

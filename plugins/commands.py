@@ -129,25 +129,25 @@ async def start(bot, cmd):
         await cmd.reply_sticker(
             chat_id=cmd.from_user.id,
             sticker="CAACAgIAAxkBAAFIRpRhKSOavdKOIP3ZdKtEcEvKbbYX6QACbAADr8ZRGrWxwiCZlayYIAQ"
-            send_markup=InlineKeyboardMarkup(
+            
+ buttons =  [
                 [
-                   [
-                       InlineKeyboardButton("❔How to use me❓", callback_data="howto")
-                   ],
-                   [
-                       InlineKeyboardButton("🔍Serach here🔎", switch_inline_query_current_chat=''),
-                       InlineKeyboardButton("💁Help", callback_data="helpz")
-                   ],
-                   [
-                       InlineKeyboardButton("👻My dev", url="https://t.me/albin_binu"),
-                       InlineKeyboardButton("🎯About", callback_data="about")
-                   ],
-                   [
-                       InlineKeyboardButton("♻️Add me in your Chat", url="https://t.me/albin_binu")
-                   ]
-               ]
-           )
-      )   
+                    InlineKeyboardButton("❔How to use me❓", callback_data="howto")
+                ],
+                [
+                    InlineKeyboardButton("🔍Serach here🔎", switch_inline_query_current_chat=''),
+                    InlineKeyboardButton("💁Help", callback_data="helpz")
+                ],
+                [
+                    InlineKeyboardButton("👻My dev", url="https://t.me/albin_binu"),
+                    InlineKeyboardButton("🎯About", callback_data="about")
+                ],
+                [
+                    InlineKeyboardButton("♻️Add me in your Chat", url="https://t.me/albin_binu")
+                ]
+            ]
+          
+            reply_markup = InlineKeyboardMarkup(buttons)
             
 @Client.on_message(filters.command('help') & filters.private)
 async def help(bot, cmd):

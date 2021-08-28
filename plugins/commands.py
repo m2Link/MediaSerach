@@ -147,7 +147,7 @@ async def start(bot, cmd):
                    ]
                ]
            )
-       )
+       
             
 @Client.on_message(filters.command('help') & filters.private)
 async def help(bot, cmd):

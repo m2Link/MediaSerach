@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
             "https://telegra.ph/file/99e183d3cc4d1d8642067.jpg",
             "https://telegra.ph/file/0540169f6f79228280088.jpg",
             "https://telegra.ph/file/fb97821d617db86a8f158.jpg",
-            "https://telegra.ph/file/0b0e1f9827f7e6f156d73.jpg",
+            "https://telegra.ph/file/0b0e1f9827f7e6f156d73.jpg"
 )
 
 @Client.on_message(filters.command("start"))

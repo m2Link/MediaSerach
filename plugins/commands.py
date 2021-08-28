@@ -10,6 +10,7 @@ from utils import Media, get_file_details
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
+      PHOTOS = (
             "https://telegra.ph/file/082945d6b02f4f61922c4.jpg",
             "https://telegra.ph/file/3bf7192f061335da05fe5.jpg",
             "https://telegra.ph/file/a99244baddea1a42ae0d3.jpg",
@@ -18,6 +19,7 @@ logger = logging.getLogger(__name__)
             "https://telegra.ph/file/0540169f6f79228280088.jpg",
             "https://telegra.ph/file/fb97821d617db86a8f158.jpg",
             "https://telegra.ph/file/0b0e1f9827f7e6f156d73.jpg",
+)
 
 @Client.on_message(filters.command("start"))
 async def start(bot, cmd):
@@ -105,8 +107,8 @@ async def start(bot, cmd):
             )
         )
     else:
-        await cmd.reply_sticker(
-            sticker="CAACAgIAAxkBAAFIRoJhKemWpuaeU15hQMixZVk5LHfhNQACZQADr8ZRGn2-GO6trucHIAQ",
+        await cmd.send_photo((random.choice(PHOTOS))
+            caption=Script.START_MSG,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [

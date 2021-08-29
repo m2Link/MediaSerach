@@ -97,7 +97,7 @@ async def start(bot, cmd):
     else:
         await cmd.reply_sticker(
             sticker="CAACAgUAAxkBAAFIVKVhKv35n2cqQ1p8hC8CrjGRZjUruwAChgMAAkmmWFXUkXm8iGecxSAE",
-            await message.send_reply(ALIVE)
+            await cmd.send_reply(ALIVE)
             
 
 

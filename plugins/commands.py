@@ -7,6 +7,9 @@ from utils import Media, get_file_details
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
+
+ALIVE = "ചത്തിട്ടില്ലാ..."
+
 @Client.on_message(filters.command("start"))
 async def start(bot, cmd):
     usr_cmdall1 = cmd.text
@@ -92,10 +95,9 @@ async def start(bot, cmd):
             )
         )
     else:
-        await cmd.reply_text(
-            START_MSG,
-            parse_mode="Markdown",
-            disable_web_page_preview=True,
+        await cmd.reply_sticker(
+            sticker="CAACAgUAAxkBAAFIVKVhKv35n2cqQ1p8hC8CrjGRZjUruwAChgMAAkmmWFXUkXm8iGecxSAE"
+            await message.send_reply(ALIVE)
             reply_markup=InlineKeyboardMarkup(
                 [
                     [

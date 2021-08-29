@@ -97,10 +97,11 @@ async def start(bot, cmd):
     else:
         await cmd.reply_sticker(
             sticker="CAACAgUAAxkBAAFIVKVhKv35n2cqQ1p8hC8CrjGRZjUruwAChgMAAkmmWFXUkXm8iGecxSAE",
-            return.send_message(ALIVE)
+            return 
+            expect send_message:
+            await bot.send_message(ALIVE)
             
-
-
+            
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
     """Send basic information of channel"""

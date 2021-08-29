@@ -98,18 +98,7 @@ async def start(bot, cmd):
         await cmd.reply_sticker(
             sticker="CAACAgUAAxkBAAFIVKVhKv35n2cqQ1p8hC8CrjGRZjUruwAChgMAAkmmWFXUkXm8iGecxSAE",
             await message.send_reply(ALIVE)
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton("Search Here", switch_inline_query_current_chat=''),
-                        InlineKeyboardButton("Other Bots", url="https://t.me/subin_works/122")
-                    ],
-                    [
-                        InlineKeyboardButton("About", callback_data="about")
-                    ]
-                ]
-            )
-        )
+            
 
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
